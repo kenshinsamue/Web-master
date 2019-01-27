@@ -1,0 +1,269 @@
+    <html>
+    <meta charset="UTF-8">
+    <head>
+
+        <title>Casco cines</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+       <link rel="stylesheet" href="rectk_complicaciones.css" type="text/css" />
+       <link rel="stylesheet" href="css/categoria.css" type="text/css" />
+
+
+    </head>
+
+
+
+    <body>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+
+       <nav class="navbar navbar-expand-lg navbar-dark ">
+       <a href="Index.html"><img src="imagenes/casco_cines.png"  alt="Cinque Terre " style="width: 100px;"></a>
+
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+
+          <span class="navbar-toggler-icon"></span>
+
+       </button>
+       
+         <!-- Creamos la barra para navegar entre paginas usando bootstrap -->
+       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+    
+                  <a class="nav-link" href="Top.html">Top <span class="sr-only">(current)</span></a>
+    
+                </li>
+                <li class="nav-item active">
+    
+                    <a class="nav-link" href="categoria.html">Categoria <span class="sr-only">(current)</span></a>
+    
+                </li>
+                <li class="nav-item active">
+    
+                    <a class="nav-link" href="at_cliente.html">Atención al cliente <span class="sr-only">(current)</span></a>
+    
+                </li>
+
+            </ul>
+
+
+
+    <form class="form-inline my-2 my-lg-0" id="barra_log">
+
+     <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+    <script>
+
+    function log_out(){
+
+
+                                                document.cookie="username=;expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+                                                window.location.href="Index.html";
+
+
+    }
+     // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyBrwLumts2gkeLjgvjer9_f7lhY3NwZUow",
+    authDomain: "sipc-54c0f.firebaseapp.com",
+    databaseURL: "https://sipc-54c0f.firebaseio.com",
+    projectId: "sipc-54c0f",
+    storageBucket: "sipc-54c0f.appspot.com",
+    messagingSenderId: "49051567985"
+    };
+    firebase.initializeApp(config);
+
+    var database = firebase.database();
+
+
+
+
+        var usuario=document.cookie;            // cogemos las cookies
+        var idxu=usuario.search("username");        // obtenermos la posicion de username en el string de la cookie  ----//// en caso de que no lo encuentre devuelve -1, si la encuentra da un numero que es la posicion
+
+
+
+        var ejemplo = document.getElementById("barra_log");
+
+
+        if(idxu==-1 ){           // vemos con que al menos una de ellas no este se muestra log-in,sign-up, etc
+
+
+                ejemplo.insertAdjacentHTML("beforeend","<ul class='navbar-nav ml-auto'> <li class='navbar-nav ml-auto'> <a class ='nav-link' href='login.html'>Log in  </a> </li> <li class='navbar-nav ml-auto'> <a class='nav-link' href='sign_in.html'>Sign up</a> </li> </ul> ");
+
+                // si pones esto va descargado, esto ---> (?) "<ul class='navbar-nav ml-auto'> <li class='navbar-nav ml-auto'> <a class ='nav-link' href='login.html'>Log in  </a> </li> <li class='navbar-nav ml-auto'> <a class='nav-link' href='sign_in.html'>Sign up</a> </li> </ul> "
+
+                //  y esto para c9 "<a class='navbar-brand' href='login.html'>Log in</a> <a class='navbar-brand' href='sign_in.html'>Sign up</a>"
+
+
+        }
+
+        ///////  Si quieres probarlo create una cuenta , o bien usa una que ya esta (firebase)
+        // si quieres volver a ver la pagina sin iniciar sesion tienes que eliminar las cookies del navegador
+
+
+        else{       // en otro caso , pues se muestra el usuario
+
+
+                usuario=usuario.substr(idxu);               // eliminamos todo el string de las cookies hasta username
+                var fin=usuario.search(";");                // buscamos hasta que termina la cookie de username
+
+
+
+                if(fin>=0){
+
+                    var usr= usuario.substring(9,fin);         // obtenemos el valor del username
+                }
+                else{
+
+                    var usr= usuario.substring(9);         // obtenemos el valor del username
+                }
+
+                var img;
+                var usrref=database.ref("/usuarios/"+usr+"/");
+
+
+                usrref.once("value",function(snapshot){
+                    img=snapshot.val().img;
+
+                    ejemplo.insertAdjacentHTML("beforeend","<a ><img src='"+img+"' onClick='log_out()'  style='max-width: 70px; max-height:70px'></a>  <a class='navbar-brand' onClick='log_out()' >"+usr+"</a>");
+
+
+                });
+        }
+
+     </script>
+
+
+
+
+    </form>
+
+    </div>
+
+
+    </nav>
+
+
+
+
+    <div>
+    <!-- aca va un espacio -->
+    </br>
+
+
+
+    </div>
+
+    <div class="container-fluid">
+    <div class="card-group" id="ejemplo">
+
+
+
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyBrwLumts2gkeLjgvjer9_f7lhY3NwZUow",
+    authDomain: "sipc-54c0f.firebaseapp.com",
+    databaseURL: "https://sipc-54c0f.firebaseio.com",
+    projectId: "sipc-54c0f",
+    storageBucket: "sipc-54c0f.appspot.com",
+    messagingSenderId: "49051567985"
+    };
+    firebase.initializeApp(config);
+
+    var database = firebase.database();
+    var numerojaja=-1;
+
+
+    var aaaa= firebase.database().ref("/peliculas/");          // hacemos una referencia al nodo de peliculas
+
+
+
+    aaaa.once("value",function(snapshot){            // accedemos a la base de datos
+
+    var vector=[];                           // creamos un vector
+    var valor=[];
+
+    snapshot.forEach(function(child){        // por cada hijo de "peliculas"
+
+
+    vector.push(child.key);          // pusheamos dicho hijo, ya que esta en orden ascendente
+    valor.push(child.val().reputacion);
+    });
+    // window.alert("hola");
+    var ab;
+    var ac;
+    for(var j=0;j <= valor.length-1;j++){
+
+    if(j+1<valor.length){
+        ab=parseFloat(valor[j]);
+        ac=parseFloat(valor[j+1]);
+        if(ab<ac){
+
+            var a=valor[j];
+            valor[j]=valor[j+1];
+            valor[j+1]=a;
+
+            a=vector[j];
+            vector[j]=vector[j+1];
+            vector[j+1]=a;
+
+            j=-1;
+        }
+
+
+
+
+    }
+
+
+
+
+    }
+
+    var ejemplo = document.getElementById("ejemplo");                                            // una vez terminado la obtencion de los indices de los hijos de "peliculas"
+    for(var i = 0; i<=vector.length-1;i++){       // hacemos un bucle para acceder al vector en orden inverso
+
+    aaaa.child(vector[i]).once('value').then(function(snapshot){     // accedemos al hijo que tiene el identificador de la ultima posicion del vector
+
+    // Se genera una card, que es un elemento de bootstrap bastante util para crear una cartelera y le asignamos un grid adecuado para hacerlas responsivas
+    ejemplo.insertAdjacentHTML("beforeend",'<div class="col-xs-12 col-sm-6  col-md-4  col-lg-3"> <div class="card-column w-70 "> <img class="card-img-top" src="'+snapshot.val().cartelera+'" alt="Card image cap" > <div class="card-body"> <p class="card-title text-white "> '+snapshot.val().nombre+'</p> <i class="descripcion text-white ">'+snapshot.val().descripcion+'</i> <br> <i class="cocos text-white ">'+snapshot.val().reputacion+' cocos sobre 5</i> </div> </div> </div> ');
+    
+    //c9 sin los text-white y solo card no el card-column y el w-70
+
+    });
+
+    }
+    });
+
+
+
+
+    </script>
+
+
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="mt-1"></div>
+
+    </body>
+
+    </html>

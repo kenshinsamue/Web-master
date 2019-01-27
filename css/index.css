@@ -1,0 +1,53 @@
+        body {
+
+            background-color: #0F171E;            /* Color de fondo para el index */
+            min-height: 100%;
+            min-width: 800px;
+
+            /* Escalamiento proporcional */
+            width: 100%;
+            height: auto;
+
+
+
+        }
+
+        .navbar{
+            background-color:rgba(000, 000, 000, 0.4);        /* elegimos el color de la barra de navegar */
+            color:white;
+
+
+
+        }
+
+
+
+        .cocos{
+            font-size:10px;            /* Tamaño de las letras de calificación de las peliculas */
+
+
+        }
+
+        .descripcion{
+            font-size:20px;            /* Tamaño de las letras de la descripcion de la pelicula */
+
+
+
+        }
+
+        .card-title{
+            font-size:25px;            /* Tamaño del titulo de las peliculas */
+
+
+
+
+
+        }
+
+        .card{
+            background-color:rgba(255, 255, 255, 0.0);
+            width: 18rem;
+            height: 40rem;                                /* Hacemos que las card sean transparentes y las letras de color blanco , asi como una fuente para las letras */
+            color:white;
+            font-family:trebuchet-ms;
+        }
