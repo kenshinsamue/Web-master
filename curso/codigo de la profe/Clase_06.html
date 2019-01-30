@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+  <html lang="es" class="no-js">
+    <head>
+      <!-- Metadata -->
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="canonical" href="#" />
+        <title>Clase_06</title>
+        <meta name="description" content="A brief page description">
+        <meta name="keywords" content="HTML5, CSS3, Javascript">
+        <meta name="author" content="Candy González">
+        
+        <!-- OTRAS ETIQUETAS
+        <meta property="fb:admins" content="YourFacebookUsername" />
+        <meta property="og:title" content="HTML5" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://htmlcheatsheet.com/" />
+        <meta property="og:image" content="http://htmlcheatsheet.com/images/html-cheatsheet.jpg" />
+        <meta property="og:description" content="A brief page description" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="alternate" hreflang="es" href="http://htmlcheatsheet.com/spanish/" />-->
+
+        <!-- Recursos Externos -->
+        <link rel="stylesheet" href="styles.css">
+        <script src="/script.js"></script>
+        <!-- Librerias -->
+    </head>
+  <body>
+    <!--Inserta una imagen desde una url -->
+    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Palabra google con letras de colores" width="350" height="200">
+    <hr>
+    <!-- Un elemento en bloque siempre empieza en una nueva línea y ocupa todo el ancho disponible. -->
+    <div>Hola</div>
+    <div>Mundo</div>
+    <!--Un elemento en línea no se inicia en una nueva línea y sólo ocupa el mismo ancho que sea necesario.-->
+    <span>Hola</span>
+    <span>Mundo</span>
+    <h1>Por qué puede ser <span style="color:red">Importante</span> o útil</h1>
+    <hr>
+    <br>
+    <h2>Mapa de imagen</h2>
+      <p>varios links dentro de una imagen</p>
+      <img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+      <map name="workmap">
+        <area shape="rect" coords="34,44,270,350" alt="Computadora" href="#">
+        <area shape="rect" coords="290,172,333,250" alt="Móvil" href="#">
+        <area shape="circle" coords="337,300,44" alt="Café" href="#">
+      </map>
+    <hr>
+    <h2>Audio</h2>
+    <!--Formatos y más información en https://www.w3schools.com/html/html_media.asp-->
+    <h3>Extreme - More Than Words</h3> 
+    <audio controls>
+      <source src="Extreme_More_Than_Words.ogg" type="audio/ogg">
+      <source src="Extreme_More_Than_Words.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h2>Vídeo</h2>
+    <h3>Andreas Bourani - Auf uns</h3> 
+    <video width="400" controls>
+      <source src="Andreas_Bourani_Auf_uns.mp4" type="video/mp4">
+      <source src="Andreas_Bourani_Auf_uns.ogg" type="video/ogg">
+      Your browser does not support HTML5 video.
+    </video>
+
+    <h3>Alejandro Sanz - Un Zombie A La Intemperie</h3>
+    <!-- Desde Youtube -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/x0n3JKL7Qkc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    <!-- Aplicaciones auxiliares (plug-ins) son programas informáticos que amplían la funcionalidad estándar de un navegador web. Plug-ins se pueden utilizar para muchos propósitos: mostrar mapas, escanear en busca de virus, verificar su identificación del banco, etc. Se pueden añadir a las páginas web con la etiqueta <object> o <embed>. -->
+
+      <object width="400" height="50" data="bookmark.swf"></object>
+      <embed width="400" height="50" src="bookmark.swf">
+
+    <h2>Formularios</h2>
+    <hr>
+    <h4>Formulario con JavaScript</h4>
+      <p>Introduzca un Número: <input type="text" id="texto_01" size="12" onclick="vaciar()"> </p>
+      <p> 
+        <button>Enviar</button>
+        <button class="boton" onclick="nombreFuncion()">Llama a una función js</button>
+      </p>
+    <hr>
+    <h4>Formulario con PHP</h4>
+    <form method="post" action="form.php">
+      Nombre: <input type="text" name="nombre"><br>
+      Apellidos: <input type="text" name="apellido"><br>
+      <input type="submit" value="Enviar">
+    </form>
+ 
+    <h5>Encabezado 5</h5>
+    <textarea rows="4" cols="16">Esto es una textarea.</textarea>   
+    <button type="button">botón</button>
+   
+  </body>
+</html>
