@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+	<!--   creamos un div para poder poner el formulario centralizado -->
+	<div align="center">
+		<h1>Formulario de registro</h1>
+
+		<br>
+		<div style="max-width: 60%;">	
+			<!--  creamos el formulario y con css le especificamos que ocupara un 60% del ancho de la pantalla -->
+			<form >
+				<fieldset >
+					<legend> Datos de usuario </legend>
+					<!--  como todo esta centralizado, usamos un div para poder ajustarlo a la izquierda para los elementos que esten dentro del formulario -->
+					<div align="left">
+						<!-- creamos los inputs el primero para email, el segundo para introducir un unsuario (texto plano) y el ultimo para la password-->
+						<br>
+						Email: <input type="email"><br><br>
+  						Usuario: <input type="text"><br><br>
+						Password: <input type="password"><br><br>
+  						La contrasena debe contener entre 2 y 4 caracteres
+
+  					</div>
+				</fieldset>		
+
+			</form>
+			<br>
+			<form >
+				<fieldset >
+					<legend> Datos personales </legend>
+
+					<div align="left">
+						<br>
+						<!--  a diferencia de antes ponemos dos inputs de tipo texto pues son para el nombre y el apellido del usuario-->
+						Nombre: <input type="text"><a style="color:red;">*</a><br><br>
+  						Apellido: <input type="text"><a style="color:red;">*</a><br><br>
+  						<!--  usamos el input de tipo date para poder introducir una fecha-->
+						Fecha: <input type="date" name="fecha" size="20">
+						<p>Sexo:<br>
+							<!--  creamos varios inputs para poder hacer selecciones unicas-->
+						  <input type="radio" name="hm" value="h" required> Hombre<br>
+						  <input type="radio" name="hm" value="m" required> Mujer<br>
+						  <input type="radio" name="hm" value="m" required> Prefiero no decirlo
+						</p>
+
+
+  					</div>
+					
+
+
+				</fieldset>		
+
+
+
+			</form>
+			<br>
+			<form >
+				<fieldset >
+					<legend> Datos socioeconomicos </legend>
+
+					<div align="left">
+						<br>
+
+						<!--  creamos un text area para que el usuario pueda introducir su direccion -->
+						Direccion: <br>
+						<textarea name="texto" rows="4" cols="20"></textarea>
+						<br><br>
+
+						<!--  creamos un input que obtendra un numero de telefono-->
+						Telefono: <input type="tel" name="telefono" size="40"><br><br>
+						Tarjeta de credito: 
+						<select name="menu">
+						  <option>Visa</option>
+						  <option>MasterCard</option>
+						</select>
+
+						Numero <input type="text" name="telefono" size="40"><br><br>
+
+  					</div>
+					
+					
+
+				</fieldset>		
+				<br>
+				<div align="left"><input type="checkbox" name="casilla" align="left">Acepta nuestra politica de Privacidad
+				<hr>
+				<button type="submit">
+				  Enviar
+				</button>
+				</div>
+					
+
+			</form>
+		</div>
+
+	</div>
+
+
+
+</body>
+</html>
