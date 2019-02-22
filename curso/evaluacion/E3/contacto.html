@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>the senate rules!</title>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<!--   Buscamos el fichero css  -->
+</head>
+<body>
+	
+
+	<h2 class="contacto">Contacto:</h2>
+
+	<!--  lista para los datos de contacto con el senado -->
+	<ul class="contacto">
+		<li class="contacto">Correo: itstreasonthen@imthesenate.com</li>
+		<li class="contacto">Direccion: Coruscant, intergalactic senate of the republic</li>
+		<li class="contacto">Telefono: 66666666</li>
+		<li class="contacto">Referencias: Maul, Yoda, Anakin, plo-koon </li>
+
+	</ul>
+	<br><br>
+
+	<!--  mostramos una foto del senado--->
+	<img src="img/senado.jpeg">
+
+	<br><br>
+	<h3>Mensaje para feedback<h3>
+	
+		
+		<input type="text" id="mensaje" name="mensaje">
+		
+
+	
+	<button onclick="mensaje()">enviar!</button>
+
+		<script>
+		function mensaje(){
+			
+			var mensaje=document.getElementByID("mensaje").value;
+			if(mensaje!=""){
+				alert("Its treason then!");
+
+			}
+		}
+
+	</script>
+</body>
+</html>

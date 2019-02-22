@@ -1,0 +1,61 @@
+
+/*			plantilla para el color de fondo de toda la pagina web				*/
+body{
+	background-color:#e1f1f1;
+
+}
+
+
+/*			conjunto de plantillas para los elementos relacionados al contacto con el senado					*/
+h2.contacto{
+color: #000000;
+}
+li.contacto{
+
+	font-size: 25px;
+
+}
+ul.contacto{
+
+	padding-left: 5%;	
+}
+th.contacto{
+	
+	left:0px;
+}
+
+
+/*			otros tipos de plantillas				*/
+h2{
+	font-style: italic;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+
+}
+
+li{
+	font-size: 30px;
+	padding-top: 10px;
+
+}
+
+ul{
+	padding-left: 8%;
+
+}
+
+img{
+
+	max-width: 400px;
+
+}
+
+
+/*			conjunto de plantillas para el cliente							*/
+img.senado{
+	max-width:100px;
+	padding-right: 0px;
+}
+table.senado{
+
+	width:100%;
+}
