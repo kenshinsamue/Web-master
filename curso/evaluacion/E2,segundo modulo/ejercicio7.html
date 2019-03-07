@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	
+var edad=0;
+var usuarios = new Array(5);
+for(i=0;i<5;i++){
+
+	usuarios[i]=new Array(3);
+}
+
+
+for(i=0;i<5;i++){
+
+	
+
+	edad=parseInt(prompt("Introduzca la edad del usuario: ",''));
+	if(edad >= 18){
+
+		usuarios[i][0]=edad.toString();
+		usuarios[i][1]=prompt("Introduzca el nombre del usuario: ",'');
+		usuarios[i][2]=prompt("Introduzca el nombre de la ciudad: ",'');
+	}
+	else{
+
+		alert("el usuario es menor de edad, vuelva a intentar");
+	}
+	
+
+}
+
+
+</script>
+
+
+</body>
+</html>

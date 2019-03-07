@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var evaluacion=0;
+	var prueba_p=0;
+	var prueba_t=0;
+	var nota =[];
+	var nombre =[];
+	for(i=0;i<18;i++){
+		
+		nombre[i]=prompt("Introduzca el nombre del alumno: ",'');
+
+
+		for(j=0;j<3;j++){
+
+			evaluacion+=parseInt(prompt("Introduzca el resultado de la evaluacion "+(j+1)+": ",''));
+		}
+
+		nota[i]=evaluacion/3;
+		nota[i]=nota[i]*0.3;
+		
+		prueba_t=parseInt(prompt("Introduzca el resultado de la prueba teorica: ",''));
+		prueba_t=prueba_t*0.2;
+		prueba_p= parseInt(prompt("Introduzca el resultado de la prueba practica: ",''));
+		prueba_p=prueba_p*0.8;
+		nota[i]=nota[i]+(prueba_p+prueba_t)*0.7;
+		alert("la nota del alumno es : "+ nota[i]);
+	}
+
+
+</script>
+
+</body>
+</html>
